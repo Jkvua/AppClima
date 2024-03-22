@@ -2,15 +2,34 @@
     --corPrimaria: #3ACEE6;
     --corSecundaria: #3998E6;
     --CorTercearia: #39E689;
+    --fundo: white;
 }
 
 body {
-    background-color: var(--corPrimaria);
-    /*display: grid;
+    background-color: var(--fundo);
+    margin: 0; border: 0;
+    height: 100vh; width: 100%;
+    display: grid;
     grid-template-areas: 
-    "header header"
-    "content content"
-    "content content"
-    "footer footer";*/
+    "cabecalho"
+    "conteudo"
+    "rodape";
+    grid-template-rows: 1fr 10fr 1fr;
+    gap: 1rem;
 }
 
+header {
+    grid-area: cabecalho;
+    background-color: var(--corPrimaria);
+}
+footer {
+    grid-area: rodape;
+    background-color: var(--corPrimaria);
+}
+
+main {
+    grid-area: conteudo;
+    display: grid;
+    grid-template-rows: 3fr 2fr;
+    gap: 3rem;
+}
