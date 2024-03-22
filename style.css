@@ -1,8 +1,9 @@
 :root {
     --corPrimaria: #3ACEE6;
+    --corSecundaria: #3998E6;
+    --CorTercearia: #39E689;
 }
 
 body {
     background-color: var(--corPrimaria);
 }
-
