@@ -1,3 +1,7 @@
 :root {
     --corPrimaria: #3ACEE6;
 }
+
+body {
+    background-color: var(--corPrimaria);
+}
