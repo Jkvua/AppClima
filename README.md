@@ -10,6 +10,4 @@ Você pode usar uma API como OpenWeatherMap para buscar dados meteorológicos e 
 #### Linguagens utilizadas
 
 * Utilizamos as linguagens: 
-**HTML** = linguagem de marcação.
-**CSS** = linguagem de estilo.
-**JAVASCRIPT** = linguagem de script.
+**HTML** (linguagem de marcação), **CSS** (linguagem de estilo) e **JAVASCRIPT** (linguagem de script).
