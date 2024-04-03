@@ -1,21 +1,27 @@
-const carrusel = document.querySelector('.carousel');
-const carousel1Items = document.querySelector('.carousel-item');
+const slider = document.querySelector('.gallery');
+let isDown = false;
+let startX;
+let scrollLeft;
 
-let correntIndex = 0;
-
-function nextSlide(){
-    correntIndex = (correntIndex +1) % carousel1Items.length;
-    updateCarousel();
-}
-
-function prevSlide() {
-    correntIndex = (correntIndex - 1 + carousel1Items.length) % carousel1Items.length;
-    updateCarousel();
-}
-
-function updateCarousel() {
-    const offset = -correntIndex * carousel1Items[0].offsetWidth;
-    carousel1Items.computedStyleMap.trasform = 'traslatex(${offset}px)';
-}
-
-setInterval(nextSlide, 3000);
+slider.addEventListener('mousedown', e => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener('mouseleave', _ => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mouseup', _ => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mousemove', e => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const SCROLL_SPEED = 3;
+  const walk = (x - startX) * SCROLL_SPEED;
+  slider.scrollLeft = scrollLeft - walk;
+});
