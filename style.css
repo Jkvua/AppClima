@@ -34,14 +34,15 @@ main {
     gap: 3rem;
 }
 
-section.slider {
+section.slider{
     margin: 0 auto;
     width: 100%;
     height: auto;
     padding: 0 !important;
+    overflow: hidden;
 }
 
-.slider-container {
+.slider-content {
     width: 400%;
     height: auto;
     display: flex;
@@ -89,6 +90,7 @@ section.slider {
 	scroll-snap-type: both mandatory;
 	scroll-padding: 1rem;
 }
+
 
 .active {
 	scroll-snap-type: unset;

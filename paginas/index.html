@@ -8,20 +8,53 @@
   </head>
   <body>
     <header>
-    <h3>App de Clima</h3>
+      <h3>App de Clima</h3>
     </header>
     <main>
-        <div class="container">
+      <div class="container">
         <h1>Busque o Clima</h1>
-        <input type="text" id="cityInput" placeholder="Digite o nome da cidade que deseja ver o clima:">
+        <input
+          type="text"
+          id="cityInput"
+          placeholder="Digite o nome da cidade que deseja ver o clima:"
+        />
         <button onclick="searchWeather()">Buscar</button>
         <div class="info">
-        <h4>Carrossel do Tempo</h4>
+          <h4>Carrossel do Tempo</h4>
+          <section class="slider">
+            <div class="slider-content">
+              <div>
+                <ul class="gallery">
+                  <li style="background: #6076f6" id="part1"></li>
+                  <li style="background: #3947ca" id="part2"></li>
+                  <li style="background: #151952" id="part4"></li>
+                  <li style="background: #68bfe7" id="part5"></li>
+                  <li style="background: #91c8dd" id="part6"></li>
+                </ul>
+              </div>
+              <div class="nav-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+              </div>
+              <div class="nav-manual">
+                <label for="part1" class="manual-btn"></label>
+                <label for="part2" class="manual-btn"></label>
+                <label for="part3" class="manual-btn"></label>
+                <label for="part4" class="manual-btn"></label>
+                <label for="part5" class="manual-btn"></label>
+                <label for="part6" class="manual-btn"></label>
+              </div>
+            </div>
+          </section>
         </div>
-        </div>
+      </div>
     </main>
     <footer>
-        <p>App desenvolvido por: Camila, Gabriela, José Victor, Otávio e Sidiclei.</p>
+      <p>
+        App desenvolvido por: Camila, Gabriela, José Victor, Otávio e Sidiclei.
+      </p>
     </footer>
-</body>
+    <script src="../js/index.js"></script>
+  </body>
 </html>
