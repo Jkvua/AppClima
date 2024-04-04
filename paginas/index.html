@@ -4,28 +4,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>App Clima</title>
+  <title>ClimaClean</title>
   <link rel="stylesheet" href="../style.css" />
 </head>
 
 <body>
   <header>
-    <h3>App de Clima</h3>
+    <h3>ClimaClean</h3>
     <nav>
       <a href="../paginas/nav.html" target="_blank">Sobre o app</a> |
       <a href="https://github.com/Jkvua/AppClima" target="_blank">Github do projeto</a>
     </nav>
+    <div class="input">
+      <h1>Busque o Clima</h1>
+      <input type="text" id="cityInput" placeholder="Digite o nome da cidade que deseja ver o clima:" />
+      <button onclick="searchWeather()">Buscar</button>
+    </div>
   </header>
   <main>
     <div class="container">
-      <div class="test">
-        <h1>Busque o Clima</h1>
-        <input type="text" id="cityInput" placeholder="Digite o nome da cidade que deseja ver o clima:" />
-        <button onclick="searchWeather()">Buscar</button>
-      </div>
-      <div class="info">
-        <h4>Carrossel do Tempo</h4>
-      </div>
       <div>
         <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
@@ -36,7 +33,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
         <div class="home-demo">
-          <h3>Carousel</h3>
+          <h3>Carrossel do Tempo</h3>
           <div class="owl-carousel owl-theme">
             <div class="item">
               <h2>Swipe</h2>
@@ -78,7 +75,8 @@
   </main>
   <footer>
     <p>
-      App desenvolvido por: Camila, Gabriela, José Victor, Otávio e Sidiclei.
+      ClimaClean <br>
+      Versão 1.0/2024
     </p>
   </footer>
   <script src="../js/index.js"></script>
