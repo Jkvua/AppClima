@@ -16,6 +16,74 @@
     --CorTercearia: #39E689;
     --fundo: white;
 }
+.maior-box {
+    background: #77b6e9;
+    opacity: 0.8;
+    border-radius: 25px;
+    padding: 20px;
+    width: 26%; 
+    height: 257px;
+    align-items: center;
+}
+
+.input-cidade {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 15px;
+    background-color: #b3ccec;
+    color: hsla(0, 0%, 0%, 0.966);
+    width: calc(100% - 100px);
+}
+.botao-busca {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #b3ccec;
+    cursor: pointer;
+    float: right;
+}
+
+.img-busca {
+    width: 15px;
+}
+
+.img-previsao {
+    width: 60px;
+}
+
+.media-box {
+    margin-top: 19px;
+}
+.cidade {
+    color:#000000;
+    font-size: 26px;
+    font-weight: 300;
+}
+
+.temp {
+    font-size: 20px;
+    color: #000000;
+    margin-top: 20px;
+}
+.menor-box {
+    display: flex;
+    align-items: center;
+}
+
+.texto-previsao {
+    color: #000000;
+    margin-left: 20px;
+    text-transform: capitalize;
+}
+
+.umidade {
+    color: #000000;
+    margin-top: 20px;
+}
+
 /*
 body {
     background-color: var(--fundo);
