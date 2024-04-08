@@ -1,5 +1,62 @@
 .home-demo .item {
-    background: #77b6e9;
+    background-image: url("imagens/imagem01.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.home-demo .item2 {
+    background-image: url("imagens/imagem2.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.home-demo .item3 {
+    background-image: url("imagens/imagem3.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.home-demo .item4 {
+    background-image: url("imagens/imagem4.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.home-demo .item5 {
+    background-image: url("imagens/imagem5.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.home-demo .item6 {
+    background-image: url("imagens/imagem6.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.home-demo .item7 {
+    background-image: url("imagens/imagem7.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.home-demo .item8 {
+    background-image: url("imagens/imagem8.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.home-demo .item9 {
+    background-image: url("imagens/imagem9.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.home-demo .item10 {
+    background-image: url("imagens/imagem10.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.home-demo .item11 {
+    background-image: url("imagens/imagem11.jpg");
+    background-position: center;
+    background-size: cover;
 }
 .home-demo h2 {
     color: #FFF;
@@ -83,6 +140,7 @@
     color: #000000;
     margin-top: 20px;
 }
+
 
 /*
 body {

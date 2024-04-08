@@ -33,4 +33,18 @@ function clicaNoBotao() {
   buscarCidade(cidade)
 }
 
+//function dataHora() {
+  //const horaExata = document.querySelector(".hour")
+  //const dataAtual = new Date()
+  //const dataFormatada = `${('0' + dataAtual.getDate()).slice(-2)}/${('0' + (dataAtual.getMonth() + 1)).slice(-2)}/${dataAtual.getFullYear()} ${('0' + dataAtual.getHours()).slice(-2)}:${('0' + dataAtual.getMinutes()).slice(-2)}:${('0' + dataAtual.getSeconds()).slice(-2)}`
+  //horaExata.textContent = dataFormatada
+  
+  //console.log(dataFormatada)
+
+  //dataHora();
+  //setInterval(dataHora, 1000)
+//}
+
+
+
 //https://codepen.io/byShep/pen/zYxgrbp//
