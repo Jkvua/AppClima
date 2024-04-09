@@ -1,47 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pagina secundaria </title>
+    <title>Página Secundária</title>
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+
+        .forecast {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+
+        .day {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 100px;
+        }
+    </style>
 </head>
 
+
 <body>
-    <!-- inicio -->
     <div class="content">
         <h1 style="color:green; padding-top:40px; text-align: center;">
-            Previsao do tempo nas cidades do brasil
+            Previsão do Tempo nas Cidades do Brasil
         </h1>
     </div>
-    <!-- barra de pesquisa -->
     <div class="search">
-        <h1 style="color:green; padding: top 60px; text-align: center;">
+        <h1 style="color:green; padding-top: 60px; text-align: center;">
             <form action="#">
-                <input type="text" placeholder=" Pesquise sua cidade" name="search">
-                <button>
-                    <i class="fa fa-search" style="font-size: 25px;">
-                    </i>
-                </button>
+                <input type="text" placeholder="Pesquise sua cidade" name="search">
+                <button type="button" onclick="searchWeather()">Pesquisar</button>
             </form>
         </h1>
     </div>
-    </div>
-
-
-
-
-    <section style=" background-color: rgb(0, 255, 234);width: 300px; height: 200px;" id="estado-actual" class="card">
-
-        <h1 class="title-h1">Previsão do tempo Joinville - SC</h1>
-        <span class="estado row">
-            <span class="hour">10:50</span>
-            <span class="day">Quinta</span>
-            <span class="botonera row"></span>
-        </span>
+    <section style="background-color: rgb(0, 255, 234); width: 400px; height: 300px; margin: auto;">
+        <h1 class="title-h1" style="text-align: center;">Previsão do Tempo Joinville - SC</h1>
+        <div class="estado row">
+            <div class="new-box">
+                <span class="hour">10:50</span>
+                <span class="day">Quinta</span>
+                <span class="botonera row"></span>
+                <p class="temp">21°C</p>
+                <img class="img-previsao" alt="icone-info-tempo"
+                    src="https://cdn.weatherapi.com/weather/64x64/night/389.png" />
+                <p class="texto-previsao">Chuva-forte</p>
+            </div>
+            <p class="umidade">Umidade: 76%</p>
+        </div>
     </section>
 
 
-<script src="../js/index.js"></script>
+    <div class="container">
+        <h2>Cidade: Joinville</h2>
+        <div class="forecast">
+            <div class="day">Seg</div>
+            <div class="day">Ter</div>
+            <div class="day">Qua</div>
+            <div class="day">Qui</div>
+            <div class="day">Sex</div>
+            <div class="day">Sáb</div>
+            <div class="day">Dom</div>
+        </div>
+    </div>
 </body>
+
+
 </html>
