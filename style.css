@@ -1,63 +1,72 @@
-.home-demo .item {
+/* Inicio Imagens */
+.home-demo #item {
     background-image: url("imagens/imagem01.jpg");
     background-position: center;
     background-size: cover;
 }
 
-.home-demo .item2 {
+.home-demo #item2 {
     background-image: url("imagens/imagem2.jpg");
     background-position: center;
     background-size: cover;
 }
 
-.home-demo .item3 {
+.home-demo #item3 {
     background-image: url("imagens/imagem3.jpg");
     background-position: center;
-    background-size: cover;
+    background-size: cover
+;
 }
 
-.home-demo .item4 {
+.home-demo #item4 {
     background-image: url("imagens/imagem4.jpg");
     background-position: center;
     background-size: cover;
 }
 
-.home-demo .item5 {
+.home-demo #item5 {
     background-image: url("imagens/imagem5.jpg");
     background-position: center;
     background-size: cover;
 }
 
-.home-demo .item6 {
+.home-demo #item6 {
     background-image: url("imagens/imagem6.jpg");
     background-position: center;
     background-size: cover;
 }
-.home-demo .item7 {
+.home-demo #item7 {
     background-image: url("imagens/imagem7.jpg");
     background-position: center;
     background-size: cover;
 }
-.home-demo .item8 {
+.home-demo #item8 {
     background-image: url("imagens/imagem8.jpg");
     background-position: center;
     background-size: cover;
 }
-.home-demo .item9 {
+.home-demo #item9 {
     background-image: url("imagens/imagem9.jpg");
     background-position: center;
     background-size: cover;
 }
-.home-demo .item10 {
+.home-demo #item10 {
     background-image: url("imagens/imagem10.jpg");
     background-position: center;
     background-size: cover;
 }
-.home-demo .item11 {
+.home-demo #item11 {
     background-image: url("imagens/imagem11.jpg");
     background-position: center;
     background-size: cover;
 }
+
+/* Fim Imagens */
+
+.home-demo .item {
+    border-radius: 20px;
+}
+
 .home-demo h2 {
     color: #FFF;
     text-align: center;
@@ -66,6 +75,7 @@
     font-style: italic;
     font-weight: 300;
 }
+
 
 .maior-box {
     background: #77b6e9;
@@ -102,7 +112,7 @@
 }
 
 .img-previsao {
-    width: 60px;
+    width: 6rem;
 }
 
 .media-box {
@@ -178,19 +188,21 @@ main {
 
 
 main div.principal {
-    display: grid;
-    grid-template-columns: 5fr 2fr;
-    padding: 0 4rem;
+    padding: 0 5rem;
 }
 
 main div.principal .media-box {
     background-color: var(--corSecundaria);
     padding: 1rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 main div.principal .media-box .info {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     padding: 2rem 0;
