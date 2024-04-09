@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>☁️ ClimaClean</title>
@@ -8,93 +9,98 @@
 <body>
   <header>
     <h3>☁️ ClimaClean</h3>
+    <div class="input">
+      <input class="input-cidade"
+        type="text"
+        id="cityinput"
+        placeholder="Digite o nome da cidade que deseja ver o clima:"
+      >
+      <button class="botao-busca" onclick="clicaNoBotao()">
+        <img
+          class="img-busca"
+          alt="buscar"
+          src="https://www.svgrepo.com/show/488200/find.svg"
+        />
+      </button>
+    </div>
     <nav>
       <a href="../paginas/nav.html" target="_blank">Sobre o app</a>
+      <span> | </span>
       <a href="https://github.com/Jkvua/AppClima" target="_blank">Github do projeto</a>
     </nav>
-    <div class="input">
-      <h1>Busque o Clima</h1>
-      <div class="maior-box">
-        <div class="input">
-          <input
-            class="input-cidade"
-            type="text"
-            id="cityInput"
-            placeholder="Digite o nome da cidade que deseja ver o clima:"
-          />
-          <button class="botao-busca" onclick="clicaNoBotao()">
-            <img
-              class="img-busca"
-              alt="buscar"
-              src="https://www.svgrepo.com/show/488200/find.svg"
+  </header>
+  <main>
+    <div class="container principal">
+      <div>
+
+      </div>
+      <div class="media-box">
+        <div class="info">
+          <h2 class="cidade">Tempo em São Paulo</h2>
+          <p class="temp">21°C</p>
+        </div>
+        <div class="info">
+          <div class="menor-box">
+            <img class="img-previsao"
+              alt="icone-info-tempo"
+              src="https://cdn.weatherapi.com/weather/64x64/night/389.png"
             />
-          </button>
-          <div class="media-box">
-            <h2 class="cidade">Tempo em São Paulo</h2>
-            <p class="temp">21°C</p>
-            <div class="menor-box">
-              <img class="img-previsao"
-                alt="icone-info-tempo"
-                src="https://cdn.weatherapi.com/weather/64x64/night/389.png"
-              />
-              <p class="texto-previsao">Chuva-forte</p>
-            </div>
-            <p class="umidade">Umidade: 76%</p>
+            <p class="texto-previsao">Chuva-forte</p>
           </div>
+          <p class="umidade">Umidade: 76%</p>
         </div>
       </div>
-    </header>
-    <main>
-      <div class="container">
-        <div>
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-          />
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-          />
+    </div>
+    <div class="container">
+      <div>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        />
 
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-          <div class="home-demo">
-            <h3>Carrossel do Tempo</h3>
-            <div class="owl-carousel owl-theme">
-              <div class="item">
-                <h2>Swipe</h2>
-              </div>
-              <div class="item2">
-                <h2>Drag</h2>
-              </div>
-              <div class="item3">
-                <h2>Responsive</h2>
-              </div>
-              <div class="item4">
-                <h2>CSS3</h2>
-              </div>
-              <div class="item5">
-                <h2>Fast</h2>
-              </div>
-              <div class="item6">
-                <h2>Easy</h2>
-              </div>
-              <div class="item7">
-                <h2>Free</h2>
-              </div>
-              <div class="item8">
-                <h2>Upgradable</h2>
-              </div>
-              <div class="item9">
-                <h2>Tons of options</h2>
-              </div>
-              <div class="item10">
-                <h2>Infinity</h2>
-              </div>
-              <div class="item11">
-                <h2>Auto Width</h2>
-              </div>
+        <div class="home-demo">
+          <h3>Carrossel do Tempo</h3>
+          <div class="owl-carousel owl-theme">
+            <div class="item">
+              <h2>Swipe</h2>
+            </div>
+            <div class="item2">
+              <h2>Drag</h2>
+            </div>
+            <div class="item3">
+              <h2>Responsive</h2>
+            </div>
+            <div class="item4">
+              <h2>CSS3</h2>
+            </div>
+            <div class="item5">
+              <h2>Fast</h2>
+            </div>
+            <div class="item6">
+              <h2>Easy</h2>
+            </div>
+            <div class="item7">
+              <h2>Free</h2>
+            </div>
+            <div class="item8">
+              <h2>Upgradable</h2>
+            </div>
+            <div class="item9">
+              <h2>Tons of options</h2>
+            </div>
+            <div class="item10">
+              <h2>Infinity</h2>
+            </div>
+            <div class="item11">
+              <h2>Auto Width</h2>
+            </div>
             </div>
           </div>
         </div>
