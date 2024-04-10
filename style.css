@@ -245,3 +245,7 @@ main div.principal .media-box .info.clima {
 .container {
     margin: 2rem;
 }
+
+.nav a:hover {
+    text-decoration: none;
+}
