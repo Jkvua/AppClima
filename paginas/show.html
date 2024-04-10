@@ -1,76 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Secundária</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClimaClean</title>
     <style>
-        .container {
-            text-align: center;
-            margin-top: 20px;
-        }
+      * {
+        margin: 0;
+        padding: 10px;
+        box-sizing: border-box;
+        align-items: center;
+      }
 
+      .container {
+        background-color: rgb(139, 171, 241);
+        width: 100%;
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+        margin: 0 auto;
+      }
 
-        .forecast {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
+      .days-list {
+        display: flex;
+        list-style: none;
+        margin: 10px 35px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+        border-radius: 20px;
+      }
 
+      .days-list li {
+        padding: 15px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
 
-        .day {
-            border: 1px solid #ccc;
-            padding: 10px;
-            width: 100px;
-        }
+      .days-list li .br {
+        margin-bottom: 5px;
+        font-size: 2rem;
+      }
+
+      .days-list li:hover {
+        transform: scale(1.1);
+        background: #fff;
+        color: #222831;
+        box-shadow: 0 5px 15px (0, 0, 0, 0.35);
+      }
+
+      .days-list li .day-tamp {
+        margin-top: 6px;
+        font-weight: 700;
+      }
+
+      .forecast {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+      .imgs-busca {
+        width: 15px;
+        
+      }
+
+      .day {
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 100px;
+      }
     </style>
-</head>
+  </head>
 
-
-<body>
+  <body>
     <div class="content">
-        <h1 style="color:green; padding-top:40px; text-align: center;">
-            Previsão do Tempo nas Cidades do Brasil
-        </h1>
+      <h1 style="color: green; padding-top: 40px; text-align: center">
+        Previsão do Tempo nas Cidades do Brasil
+      </h1>
     </div>
-    <div class="search">
-        <h1 style="color:green; padding-top: 60px; text-align: center;">
-            <form action="#">
-                <input type="text" placeholder="Pesquise sua cidade" name="search">
-                <button type="button" onclick="searchWeather()">Pesquisar</button>
-            </form>
+    <div class="maior">
+      <section
+        style="
+          background-color: rgb(0, 255, 234);
+          width: 600px;
+          height: 400px;
+          margin: auto;
+        "
+      >
+        <h1 class="title-h1" style="text-align: center">
+          Previsão do Tempo Joinville - SC
         </h1>
-    </div>
-    <section style="background-color: rgb(0, 255, 234); width: 400px; height: 300px; margin: auto;">
-        <h1 class="title-h1" style="text-align: center;">Previsão do Tempo Joinville - SC</h1>
-        <div class="new-box" style="text-align: center;">
-            <span class="hour">10:50</span>
-            <span class="day">Quinta</span>
-            <span class="botonera row"></span>
-            <p class="temp">21°C</p>
-            <img class="img-previsao" alt="icone-info-tempo"
-                src="https://cdn.weatherapi.com/weather/64x64/night/389.png" />
-            <p class="texto-previsao">Chuva-forte</p>
-            <p class="umidade">Umidade: 76%</p>
+        <div class="new-box" style="text-align: center">
+            <div class="input">
+                <input class="input-cidad"
+                  type="text"
+                  id="cityinput"
+                  placeholder="Digite o nome da cidade que deseja ver o clima:"
+                >
+                <button class="botao-busca" onclick="botaoClica()">
+                  <img
+                    class="imgs-busca"
+                    alt="buscar"
+                    src="https://www.svgrepo.com/show/488200/find.svg"
+                  />
+                </button>
+              </div>
+          <span class="hour">10:50</span>
+          <span class="day">Quinta</span>
+          <p class="temp">21°C</p>
+          <p class="texto-previsao">Chuva-forte</p>
+          <p class="umidade">Umidade: 76%</p>
+          <img
+            class="img-previsao"
+            alt="icone-info-tempo"
+            src="https://cdn.weatherapi.com/weather/64x64/night/389.png"
+          />
         </div>
-    </section>
-
-
+      </section>
+    </div>
     <div class="container">
-        <h2>Cidade: Joinville</h2>
-        <div class="forecast">
-            <div class="day">Seg</div>
-            <div class="day">Ter</div>
-            <div class="day">Qua</div>
-            <div class="day">Qui</div>
-            <div class="day">Sex</div>
-            <div class="day">Sáb</div>
-            <div class="day">Dom</div>
-        </div>
+      <ul class="days-list">
+        <li>
+          <img
+            class="imagem2"
+            src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
+            alt="imagem-temp"
+          />
+          <span>Domingo</span>
+          <span class="day-tamp">23C°</span>
+        </li>
+        <li>
+          <img
+            class="imagem2"
+            src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
+            alt="imagem-temp"
+          />
+          <span>Segunda</span>
+          <span class="day-tamp">23C°</span>
+        </li>
+        <li>
+          <img
+            class="imagem2"
+            src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
+            alt="imagem-temp"
+          />
+          <span>Terça</span>
+          <span class="day-tamp">23C°</span>
+        </li>
+        <li>
+          <img
+            class="imagem2"
+            src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
+            alt="imagem-temp"
+          />
+          <span>Quarta</span>
+          <span class="day-tamp">23C°</span>
+        </li>
+        <li>
+          <img
+            class="imagem2"
+            src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
+            alt="imagem-temp"
+          />
+          <span>Quinta</span>
+          <span class="day-tamp">23C°</span>
+        </li>
+        <li>
+          <img
+            class="imagem2"
+            src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
+            alt="imagem-temp"
+          />
+          <span>Sexta</span>
+          <span class="day-tamp">23C°</span>
+        </li>
+        <li>
+          <img
+            class="imagem2"
+            src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
+            alt="imagem-temp"
+          />
+          <span>Sábado</span>
+          <span class="day-tamp">23C°</span>
+        </li>
+      </ul>
     </div>
-</body>
-
-
+    <section src="../js/show.js"></section>
+  </body>
 </html>

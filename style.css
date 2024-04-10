@@ -61,6 +61,7 @@
     background-size: cover;
 }
 
+
 /* Fim Imagens */
 
 .home-demo .item {
@@ -75,7 +76,11 @@
     font-style: italic;
     font-weight: 300;
 }
-
+ 
+.day {
+    display: flex;
+    
+}
 
 .maior-box {
     background: #77b6e9;
