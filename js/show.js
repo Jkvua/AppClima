@@ -1,61 +1,43 @@
+
+
 const apiKey = "98cf6ef447034b90a40122310242203";
 
-
 function telaClima(dddos) {
-    console.log(dddos)
-    document.querySelector(".title-h1").innerHTML = dddos.location.name + " - " + dddos.location.country
-    document.querySelector(".hour").innerHTML = dddos.location.localtime
-    document.querySelector(".temp").innerHTML = dddos.current.temp_c + "C°"
-    document.querySelector(".texto-previsao").innerHTML = dddos.current.condition.text
-    document.querySelector(".vento").innerHTML = dddos.current.wind_kph + "km/h"
-    document.querySelector(".umidade").innerHTML = "Humidade " + dddos.current.humidity + "%"
-    document.querySelector(".img-previsao").src = "https:" + dddos.current.condition.icon
-    
- }
-
-
-
-
- function telaSemana(prev) {
-    console.log(prev);
-    
-    // Função auxiliar para obter o nome do dia da semana abreviado
-    function obterDiaSemanaAbreviado(data) {
-        var diasDaSemana = ['Sex', 'Sab', 'Dom', 'Seg', 'Ter', 'Qua', 'Qui'];
-        return diasDaSemana[new Date(data).getDay()];
-    }
-
-    // Função para atualizar os dias da semana
-    function atualizarDias() {
-        // Iterando sobre os dias da semana disponíveis nos dados fornecidos
-        for (var i = 0; i < prev.forecast.forecastday.length; i++) {
-            var dataDia = prev.forecast.forecastday[i].date;
-            var tempmax = prev.forecast.forecastday[i].day.maxtemp_c; // Corrigido para obter a temperatura máxima de cada dia
-            document.querySelector(".imagem2").src = "https:" + prev.forecast.forecastday[0].day.condition.icon
-            var diaDaSemana = obterDiaSemanaAbreviado(dataDia);
-            document.querySelector(".day" + (6 + i)).innerHTML = diaDaSemana + ', ' + dataDia + ' Max: ' + tempmax;
-        }
-    }
-
-    // Chamando a função para atualizar os dias pela primeira vez
-    atualizarDias();
-
-    // Definindo um intervalo de tempo para continuar atualizando os dias da semana infinitamente
-    setInterval(atualizarDias, 1000 * 60 * 60 * 24); // Atualiza a cada 24 horas (um dia)
+    console.log(dddos);
+    document.querySelector(".title-h1").innerHTML = dddos.location.name + " - " + dddos.location.country;
+    document.querySelector(".hour").innerHTML = dddos.location.localtime;
+    document.querySelector(".temp").innerHTML = dddos.current.temp_c + "C°";
+    document.querySelector(".texto-previsao").innerHTML = dddos.current.condition.text;
+    document.querySelector(".vento").innerHTML = dddos.current.wind_kph + "km/h";
+    document.querySelector(".umidade").innerHTML = "Humidade " + dddos.current.humidity + "%";
+    document.querySelector(".img-previsao").src = "https:" + dddos.current.condition.icon;
 }
 
 
 async function buscarCity(city) {
-    const dddos = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&lang=pt`).then( resposta => resposta.json())
-    telaClima(dddos)
+    const dddos = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&lang=pt`).then(resposta => resposta.json());
+    telaClima(dddos);
 }
 
 async function previsaoSemana(city) {
     const prev = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=98cf6ef447034b90a40122310242203&q=${city}&days=4`).then(resposta => resposta.json());
-    telaSemana(prev) // Acesse a temperatura máxima para o dia 1
+    telaSemana(prev); // Acesse a temperatura máxima para o dia 1
 }
 
-
+function telaSemana(prev) {
+    console.log(prev);
+    
+    document.querySelector(".imagem1").src = "https:" + prev.forecast.forecastday[0].day.condition.icon;
+    document.querySelector(".imagem2").src = "https:" + prev.forecast.forecastday[1].day.condition.icon;
+    document.querySelector(".imagem3").src = "https:" + prev.forecast.forecastday[2].day.condition.icon;
+    document.querySelector(".day-tamp1").innerHTML = "Max: " + prev.forecast.forecastday[0].day.maxtemp_c;
+    document.querySelector(".day-tamp2").innerHTML = "Max: " + prev.forecast.forecastday[1].day.maxtemp_c;
+    document.querySelector(".day-tamp3").innerHTML = "Max: " + prev.forecast.forecastday[2].day.maxtemp_c;
+    document.querySelector(".day-tamp1-min").innerHTML = "Min: " + prev.forecast.forecastday[0].day.mintemp_c
+    document.querySelector(".day-tamp2-min").innerHTML = "Min: " + prev.forecast.forecastday[1].day.mintemp_c
+    document.querySelector(".day-tamp3-min").innerHTML = "Min: " + prev.forecast.forecastday[2].day.mintemp_c
+    
+}
 
 
 async function botaoShow() {
@@ -64,23 +46,7 @@ async function botaoShow() {
     await previsaoSemana(cidade); // Então chame previsaoSemana para buscar a previsão
 }
 
-
-let local = window.location
-buscarCity(local.search.split("=")[1])
-
-//async function previsaoSemana(city) {
-    //const prev = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=7&aqi=yes&alerts=yes`).then( resposta => resposta.json)
-    //console.log(prev)
-//}
-
-
-//function botaoShow() {
-    //const city = document.querySelector(".input-cidad").value
-
-    //buscarCity(city)
-//}
-
-
-
-
-//`http://api.weatherapi.com/v1/forecast.json?key=98cf6ef447034b90a40122310242203&q=Brazil&days=7&aqi=yes&alerts=yes`
+document.addEventListener("DOMContentLoaded", function() {
+    let local = window.location;
+    buscarCity(local.search.split("=")[1]);
+});
