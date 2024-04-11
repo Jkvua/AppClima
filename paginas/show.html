@@ -87,14 +87,29 @@
     }*/
 
     .info-display {
-      display: grid;
+      display: flex;
       grid-template-columns: 1fr 1fr;
-    }   body * {
+      justify-content: space-between; /* Para distribuir os elementos ao longo da linha */
+    }  
+
+    .info-display .temp {
+      margin-right: 10px;
+      align-items: center;
+    }
+
+    .info-display .temp,
+    .info-display .img-previsao {
+    display: inline-block; /* Para alinhar verticalmente */
+    vertical-align: middle;
+  }
+    
+    body * {
       margin: 0;
       padding: 10px;
       box-sizing: border-box;
       align-items: center;
     }
+    
   </style>
 </head>
 
@@ -129,13 +144,13 @@
         <div class="info-display">
           <div>
             <p class="temp">21°C</p>
-            <p class="umidade">Umidade: 76%</p>
-            <p class="vento">3km/h</p>
-          </div>
-          <div>
             <img class="img-previsao" alt="icone-info-tempo"
               src="https://cdn.weatherapi.com/weather/64x64/night/389.png" />
             <p class="texto-previsao">Chuva-forte</p>
+          </div>
+          <div>
+            <p class="umidade">Umidade: 76%</p>
+            <p class="vento">3km/h</p>
           </div>
         </div>
       </div>

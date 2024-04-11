@@ -9,7 +9,7 @@ function telaClima(dddos) {
     document.querySelector(".temp").innerHTML = dddos.current.temp_c + "C°";
     document.querySelector(".texto-previsao").innerHTML = dddos.current.condition.text;
     document.querySelector(".vento").innerHTML = dddos.current.wind_kph + "km/h";
-    document.querySelector(".umidade").innerHTML = "Humidade " + dddos.current.humidity + "%";
+    document.querySelector(".umidade").innerHTML = "Humidade: " + dddos.current.humidity + "%";
     document.querySelector(".img-previsao").src = "https:" + dddos.current.condition.icon;
 }
 
@@ -49,4 +49,5 @@ async function botaoShow() {
 document.addEventListener("DOMContentLoaded", function() {
     let local = window.location;
     buscarCity(local.search.split("=")[1]);
+    previsaoSemana(local.search.split("=")[1]);
 });
