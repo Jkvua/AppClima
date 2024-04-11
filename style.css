@@ -107,7 +107,7 @@
     align-items: center;
 }
 
-.input-cidade {
+.input-cidade, .input-cidad {
     border: none;
     outline: none;
     padding: 10px;
@@ -117,7 +117,7 @@
     color: hsla(0, 0%, 0%, 0.966);
     width: calc(100% - 100px);
 }
-.botao-busca {
+.botao-busca, .butao {
     border: none;
     outline: none;
     padding: 10px;
@@ -177,7 +177,9 @@
 body {
     margin: 0;
     background-color: var(--fundo);
-    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 /* Header */
@@ -191,14 +193,16 @@ header {
 header:nth-child(1) {
     text-align: center;
 }
+header .logo {
+    text-decoration: none;
+    color: white;
+}
 
 /* Footer */
 footer {
     grid-area: footer;
     background-color: var(--corPrimaria);
-    position: absolute;
     width: 100%;
-    bottom: 0;
 }
 
 /* Main */

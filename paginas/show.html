@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ClimaClean</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
     <style>
-      * {
+      body * {
         margin: 0;
         padding: 10px;
         box-sizing: border-box;
@@ -26,6 +27,7 @@
 
       .days-list {
         display: flex;
+        justify-content: space-evenly;
         list-style: none;
         margin: 10px 35px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
@@ -82,10 +84,37 @@
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
       }
+      
+      .info-display {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
     </style>
   </head>
 
   <body>
+    <header>
+      <h2><a href="index.html" class="logo">☁️ ClimaClean</a></h2>
+      <div class="input">
+        <input class="input-cidad"
+          type="text"
+          id="cityinput"
+          placeholder="Digite o nome da cidade que deseja ver o clima:"
+        >
+        <button class="botao-busca" onclick="botaoShow()">
+          <img
+            class="img-busca"
+            alt="buscar"
+            src="https://www.svgrepo.com/show/488200/find.svg"
+          />
+        </button>
+      </div>
+      <nav class="nav">
+        <a href="../paginas/nav.html" target="_blank">Sobre o app</a>
+        <span> | </span>
+        <a href="https://github.com/Jkvua/AppClima" target="_blank">Github do projeto</a>
+      </nav>
+    </header>
     <div class="content">
       <h1 style="color: green; padding-top: 40px; text-align: center">
         Previsão do Tempo nas Cidades do Brasil
@@ -118,87 +147,98 @@
                     src="https://www.svgrepo.com/show/488200/find.svg"
                   />
                 </button>
+            </div>
+            <span class="hour">10:50</span>
+            <div class="info-display">
+              <div>
+                <p class="temp">21°C</p>
+                <p class="umidade">Umidade: 76%</p>
+                <p class="vento">3km/h</p>
               </div>
-          <span class="hour">10:50</span>
-          <p class="temp">21°C</p>
-          <p class="texto-previsao">Chuva-forte</p>
-          <p class="umidade">Umidade: 76%</p>
-          <p class="vento">3km/h</p>
-          <img
-            class="img-previsao"
-            alt="icone-info-tempo"
-            src="https://cdn.weatherapi.com/weather/64x64/night/389.png"
-          />
+              <div>
+                <img
+                  class="img-previsao"
+                  alt="icone-info-tempo"
+                  src="https://cdn.weatherapi.com/weather/64x64/night/389.png"
+                />
+                <p class="texto-previsao">Chuva-forte</p>
+              </div>              
+            </div>
+          
         </div>
       </section>
     </div>
-    <div class="container">
-      <ul class="days-list">
-        <li>
-          <img
-            class="imagem1"
-            src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
-            alt="imagem-temp"
-          />
-          <span class="day1">Dom</span>
-          <span class="day-tamp">23C°</span>
-        </li>
-        <li>
-          <img
-            class="imagem2"
-            src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
-            alt="imagem-temp"
-          />
-          <span class="day2">Seg</span>
-          <span class="day-tamp">23C°</span>
-        </li>
-        <li>
-          <img
-            class="imagem3"
-            src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
-            alt="imagem-temp"
-          />
-          <span class="day3">Ter</span>
-          <span class="day-tamp">23C°</span>
-        </li>
-        <li>
-          <img
-            class="imagem4"
-            src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
-            alt="imagem-temp"
-          />
-          <span class="day4">Qua</span>
-          <span class="day-tamp">23C°</span>
-        </li>
-        <li>
-          <img
-            class="imagem5"
-            src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
-            alt="imagem-temp"
-          />
-          <span class="day5">Qui</span>
-          <span class="day-tamp">23C°</span>
-        </li>
-        <li>
-          <img
-            class="imagem6"
-            src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
-            alt="imagem-temp"
-          />
-          <span class="day6">Sex</span>
-          <span class="day-tamp">23C°</span>
-        </li>
-        <li>
-          <img
-            class="imagem7"
-            src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
-            alt="imagem-temp"
-          />
-          <span class="day7">Sáb</span>
-          <span class="day-tamp">23C°</span>
-        </li>
-      </ul>
-    </div>
+    <ul class="days-list">
+      <li>
+        <img
+          class="imagem1"
+          src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
+          alt="imagem-temp"
+        />
+        <span class="day1">Dom</span>
+        <span class="day-tamp">23C°</span>
+      </li>
+      <li>
+        <img
+          class="imagem2"
+          src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
+          alt="imagem-temp"
+        />
+        <span class="day2">Seg</span>
+        <span class="day-tamp">23C°</span>
+      </li>
+      <li>
+        <img
+          class="imagem3"
+          src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
+          alt="imagem-temp"
+        />
+        <span class="day3">Ter</span>
+        <span class="day-tamp">23C°</span>
+      </li>
+      <li>
+        <img
+          class="imagem4"
+          src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
+          alt="imagem-temp"
+        />
+        <span class="day4">Qua</span>
+        <span class="day-tamp">23C°</span>
+      </li>
+      <li>
+        <img
+          class="imagem5"
+          src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
+          alt="imagem-temp"
+        />
+        <span class="day5">Qui</span>
+        <span class="day-tamp">23C°</span>
+      </li>
+      <li>
+        <img
+          class="imagem6"
+          src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
+          alt="imagem-temp"
+        />
+        <span class="day6">Sex</span>
+        <span class="day-tamp">23C°</span>
+      </li>
+      <li>
+        <img
+          class="imagem7"
+          src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
+          alt="imagem-temp"
+        />
+        <span class="day7">Sáb</span>
+        <span class="day-tamp">23C°</span>
+      </li>
+    </ul>
+    <footer>
+      <p>
+        ☁️ ClimaClean <br>
+        Versão 1.0/2024
+      </p>
+    </footer>
     <script src="../js/show.js"></script>
   </body>
 </html>
