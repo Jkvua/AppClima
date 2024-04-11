@@ -127,6 +127,15 @@
     float: right;
 }
 
+.botabusca {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #b3ccec;
+    cursor: pointer;
+    float: right;
+}
 .img-busca {
     width: 15px;
 }
@@ -179,7 +188,7 @@ body {
     background-color: var(--fundo);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 /* Header */

@@ -1,244 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ClimaClean</title>
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <style>
-      body * {
-        margin: 0;
-        padding: 10px;
-        box-sizing: border-box;
-        align-items: center;
-      }
 
-      .container {
-        background: linear-gradient(#afcfeb, #f0f8ff);
-        width: 100%;
-        height: 40vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 25px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-        margin: 0 auto;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClimaClean</title>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <style>
+    body {
+      height: 100vh;
+    }
+ 
 
-      .days-list {
-        display: flex;
-        justify-content: space-evenly;
-        list-style: none;
-        margin: 10px 35px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-        border-radius: 20px;
-        background: linear-gradient(#9bcbf5, #aeb6be)
-      }
+    .container {
+      background: linear-gradient(#afcfeb, #f0f8ff);
+      width: 100%;
+      height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 25px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+      margin: 0 auto;
+    }
 
-      .days-list li {
-        padding: 15px;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        border-radius: 10px;
-        transition: all 0.3s ease;
-      }
+    .days-list {
+      display: flex;
+      justify-content: space-evenly;
+      list-style: none;
+      margin: 10px 35px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+      border-radius: 20px;
+      background: linear-gradient(#9bcbf5, #aeb6be)
+    }
 
-      .days-list li .br {
-        margin-bottom: 5px;
-        font-size: 2rem;
-      }
+    .days-list li {
+      padding: 15px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
 
-      .days-list li:hover {
-        transform: scale(1.1);
-        background: linear-gradient(#317abb, #91aac0);
-        color: #222831;
-        box-shadow: 0 5px 15px (0, 0, 0, 0.35);
-      }
+    .days-list li .br {
+      margin-bottom: 5px;
+      font-size: 2rem;
+    }
 
-      .days-list li .day-tamp {
-        margin-top: 6px;
-        font-weight: 700;
-      }
+    .days-list li:hover {
+      transform: scale(1.1);
+      background: linear-gradient(#317abb, #91aac0);
+      color: #222831;
+      box-shadow: 0 5px 15px (0, 0, 0, 0.35);
+    }
 
-      .forecast {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 20px;
-      }
-      .imgs-busca {
-        width: 15px;
-        color: #222831;
-        
-      }
+    .days-list li .day-tamp {
+      margin-top: 6px;
+      font-weight: 700;
+    }
 
-      .day {
-        border: 1px solid #ccc;
-        padding: 10px;
-        width: 100px;
-      }
-      
-      .maior {
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-      }
-      
-      .info-display {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
-    </style>
-  </head>
+    .forecast {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
 
-  <body>
-    <header>
-      <h2><a href="index.html" class="logo">☁️ ClimaClean</a></h2>
-      <div class="input">
-        <input class="input-cidad"
-          type="text"
-          id="cityinput"
-          placeholder="Digite o nome da cidade que deseja ver o clima:"
-        >
-        <button class="botao-busca" onclick="botaoShow()">
-          <img
-            class="img-busca"
-            alt="buscar"
-            src="https://www.svgrepo.com/show/488200/find.svg"
-          />
+    .imgs-busca {
+      width: 15px;
+      color: #222831;
+      padding: 0;
+
+    }
+
+    .day {
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 100px;
+    }
+
+    /*.maior {
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }*/
+
+    .info-display {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }   body * {
+      margin: 0;
+      padding: 10px;
+      box-sizing: border-box;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h2><a href="index.html" class="logo">☁️ ClimaClean</a></h2>
+    <div class="input">
+      <input class="input-cidad" type="text" id="cityinput"
+        placeholder="Digite o nome da cidade que deseja ver o clima:">
+        <button class="botabusca" onclick="botaoShow()">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="16px" height="16px" viewBox="0 0 24 24" class="img-busca"><path d="M10.035,18.069a7.981,7.981,0,0,0,3.938-1.035l3.332,3.332a2.164,2.164,0,0,0,3.061-3.061l-3.332-3.332A8.032,8.032,0,0,0,4.354,4.354a8.034,8.034,0,0,0,5.681,13.715ZM5.768,5.768A6.033,6.033,0,1,1,4,10.035,5.989,5.989,0,0,1,5.768,5.768Z"/></svg>
         </button>
-      </div>
-      <nav class="nav">
-        <a href="../paginas/nav.html" target="_blank">Sobre o app</a>
-        <span> | </span>
-        <a href="https://github.com/Jkvua/AppClima" target="_blank">Github do projeto</a>
-      </nav>
-    </header>
-    <div class="content">
-      <h1 style="color: green; padding-top: 40px; text-align: center">
-        Previsão do Tempo nas Cidades do Brasil
-      </h1>
     </div>
-    <div class="maior">
-      <section
-        style="
+    <nav class="nav">
+      <a href="../paginas/nav.html" target="_blank">Sobre o app</a>
+      <span> | </span>
+      <a href="https://github.com/Jkvua/AppClima" target="_blank">Github do projeto</a>
+    </nav>
+  </header>
+    <section style="
           background: linear-gradient(#77b6e9, #e6eff7);
           width: 600px;
-          height: 400px;
+          height: 300px;
           margin: auto;
           border-radius: 30px;
-        "
-      >
-        <h1 class="title-h1" style="text-align: center">
-          Previsão do Tempo Joinville - SC
-        </h1>
-        <div class="new-box" style="text-align: center">
-            <div class="input">
-                <input class="input-cidad"
-                  type="text"
-                  id="cityinput"
-                  placeholder="Digite o nome da cidade que deseja ver o clima:"
-                >
-                <button class="butao" onclick="botaoShow()">
-                  <img
-                    class="imgs-busca"
-                    alt="buscar"
-                    src="https://www.svgrepo.com/show/488200/find.svg"
-                  />
-                </button>
-            </div>
-            <span class="hour">10:50</span>
-            <div class="info-display">
-              <div>
-                <p class="temp">21°C</p>
-                <p class="umidade">Umidade: 76%</p>
-                <p class="vento">3km/h</p>
-              </div>
-              <div>
-                <img
-                  class="img-previsao"
-                  alt="icone-info-tempo"
-                  src="https://cdn.weatherapi.com/weather/64x64/night/389.png"
-                />
-                <p class="texto-previsao">Chuva-forte</p>
-              </div>              
-            </div>
-          
+        ">
+      <h1 class="title-h1" style="text-align: center">
+        Previsão do Tempo Joinville - SC
+      </h1>
+      <div class="new-box" style="text-align: center">
+        <span class="hour">10:50</span>
+        <div class="info-display">
+          <div>
+            <p class="temp">21°C</p>
+            <p class="umidade">Umidade: 76%</p>
+            <p class="vento">3km/h</p>
+          </div>
+          <div>
+            <img class="img-previsao" alt="icone-info-tempo"
+              src="https://cdn.weatherapi.com/weather/64x64/night/389.png" />
+            <p class="texto-previsao">Chuva-forte</p>
+          </div>
         </div>
-      </section>
-    </div>
+      </div>
+  
+    </section>
     <ul class="days-list">
       <li>
-        <img
-          class="imagem1"
-          src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
-          alt="imagem-temp"
-        />
-        <span class="day1">Dom</span>
+        <img class="imagem1" src="https://cdn.weatherapi.com/weather/64x64/night/113.png" alt="imagem-temp" />
+        <span class="day1"></span>
         <span class="day-tamp">23C°</span>
       </li>
       <li>
-        <img
-          class="imagem2"
-          src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
-          alt="imagem-temp"
-        />
-        <span class="day2">Seg</span>
+        <img class="imagem2" src="https://cdn.weatherapi.com/weather/64x64/night/113.png" alt="imagem-temp" />
+        <span class="day2"></span>
         <span class="day-tamp">23C°</span>
       </li>
       <li>
-        <img
-          class="imagem3"
-          src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
-          alt="imagem-temp"
-        />
-        <span class="day3">Ter</span>
-        <span class="day-tamp">23C°</span>
-      </li>
-      <li>
-        <img
-          class="imagem4"
-          src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
-          alt="imagem-temp"
-        />
-        <span class="day4">Qua</span>
-        <span class="day-tamp">23C°</span>
-      </li>
-      <li>
-        <img
-          class="imagem5"
-          src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
-          alt="imagem-temp"
-        />
-        <span class="day5">Qui</span>
-        <span class="day-tamp">23C°</span>
-      </li>
-      <li>
-        <img
-          class="imagem6"
-          src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
-          alt="imagem-temp"
-        />
-        <span class="day6">Sex</span>
-        <span class="day-tamp">23C°</span>
-      </li>
-      <li>
-        <img
-          class="imagem7"
-          src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
-          alt="imagem-temp"
-        />
-        <span class="day7">Sáb</span>
+        <img class="imagem3" src="https://cdn.weatherapi.com/weather/64x64/night/113.png" alt="imagem-temp" />
+        <span class="day3"></span>
         <span class="day-tamp">23C°</span>
       </li>
     </ul>
-    <footer>
-      <p>
-        ☁️ ClimaClean <br>
-        Versão 1.0/2024
-      </p>
-    </footer>
-    <script src="../js/show.js"></script>
-  </body>
+  </div>
+  <footer>
+    <p>
+      ☁️ ClimaClean <br>
+      Versão 1.0/2024
+    </p>
+  </footer>
+  <script src="../js/show.js"></script>
+</body>
+
 </html>

@@ -13,12 +13,15 @@ function telaClima(dddos) {
     
  }
 
+
+
+
  function telaSemana(prev) {
     console.log(prev);
     
     // Função auxiliar para obter o nome do dia da semana abreviado
     function obterDiaSemanaAbreviado(data) {
-        var diasDaSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+        var diasDaSemana = ['Sex', 'Sab', 'Dom', 'Seg', 'Ter', 'Qua', 'Qui'];
         return diasDaSemana[new Date(data).getDay()];
     }
 
@@ -30,7 +33,7 @@ function telaClima(dddos) {
             var tempmax = prev.forecast.forecastday[i].day.maxtemp_c; // Corrigido para obter a temperatura máxima de cada dia
             document.querySelector(".imagem2").src = "https:" + prev.forecast.forecastday[0].day.condition.icon
             var diaDaSemana = obterDiaSemanaAbreviado(dataDia);
-            document.querySelector(".day" + (4 + i)).innerHTML = diaDaSemana + ', ' + dataDia + ' Max: ' + tempmax;
+            document.querySelector(".day" + (6 + i)).innerHTML = diaDaSemana + ', ' + dataDia + ' Max: ' + tempmax;
         }
     }
 
@@ -48,7 +51,7 @@ async function buscarCity(city) {
 }
 
 async function previsaoSemana(city) {
-    const prev = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=98cf6ef447034b90a40122310242203&q=${city}&days=7`).then(resposta => resposta.json());
+    const prev = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=98cf6ef447034b90a40122310242203&q=${city}&days=4`).then(resposta => resposta.json());
     telaSemana(prev) // Acesse a temperatura máxima para o dia 1
 }
 
@@ -62,7 +65,8 @@ async function botaoShow() {
 }
 
 
-
+let local = window.location
+buscarCity(local.search.split("=")[1])
 
 //async function previsaoSemana(city) {
     //const prev = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=7&aqi=yes&alerts=yes`).then( resposta => resposta.json)
