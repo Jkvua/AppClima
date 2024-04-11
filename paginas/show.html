@@ -13,7 +13,7 @@
       }
 
       .container {
-        background-color: rgb(139, 171, 241);
+        background: linear-gradient(#afcfeb, #f0f8ff);
         width: 100%;
         height: 40vh;
         display: flex;
@@ -30,6 +30,7 @@
         margin: 10px 35px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
         border-radius: 20px;
+        background: linear-gradient(#9bcbf5, #aeb6be)
       }
 
       .days-list li {
@@ -50,7 +51,7 @@
 
       .days-list li:hover {
         transform: scale(1.1);
-        background: #fff;
+        background: linear-gradient(#317abb, #91aac0);
         color: #222831;
         box-shadow: 0 5px 15px (0, 0, 0, 0.35);
       }
@@ -67,6 +68,7 @@
       }
       .imgs-busca {
         width: 15px;
+        color: #222831;
         
       }
 
@@ -74,6 +76,11 @@
         border: 1px solid #ccc;
         padding: 10px;
         width: 100px;
+      }
+      
+      .maior {
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
       }
     </style>
   </head>
@@ -87,10 +94,11 @@
     <div class="maior">
       <section
         style="
-          background-color: rgb(0, 255, 234);
+          background: linear-gradient(#77b6e9, #e6eff7);
           width: 600px;
           height: 400px;
           margin: auto;
+          border-radius: 30px;
         "
       >
         <h1 class="title-h1" style="text-align: center">
@@ -103,7 +111,7 @@
                   id="cityinput"
                   placeholder="Digite o nome da cidade que deseja ver o clima:"
                 >
-                <button class="botao-busca" onclick="botaoClica()">
+                <button class="butao" onclick="botaoShow()">
                   <img
                     class="imgs-busca"
                     alt="buscar"
@@ -112,10 +120,10 @@
                 </button>
               </div>
           <span class="hour">10:50</span>
-          <span class="day">Quinta</span>
           <p class="temp">21°C</p>
           <p class="texto-previsao">Chuva-forte</p>
           <p class="umidade">Umidade: 76%</p>
+          <p class="vento">3km/h</p>
           <img
             class="img-previsao"
             alt="icone-info-tempo"
@@ -128,11 +136,11 @@
       <ul class="days-list">
         <li>
           <img
-            class="imagem2"
+            class="imagem1"
             src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
             alt="imagem-temp"
           />
-          <span>Domingo</span>
+          <span class="day1">Dom</span>
           <span class="day-tamp">23C°</span>
         </li>
         <li>
@@ -141,56 +149,56 @@
             src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
             alt="imagem-temp"
           />
-          <span>Segunda</span>
+          <span class="day2">Seg</span>
           <span class="day-tamp">23C°</span>
         </li>
         <li>
           <img
-            class="imagem2"
+            class="imagem3"
             src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
             alt="imagem-temp"
           />
-          <span>Terça</span>
+          <span class="day3">Ter</span>
           <span class="day-tamp">23C°</span>
         </li>
         <li>
           <img
-            class="imagem2"
+            class="imagem4"
             src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
             alt="imagem-temp"
           />
-          <span>Quarta</span>
+          <span class="day4">Qua</span>
           <span class="day-tamp">23C°</span>
         </li>
         <li>
           <img
-            class="imagem2"
+            class="imagem5"
             src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
             alt="imagem-temp"
           />
-          <span>Quinta</span>
+          <span class="day5">Qui</span>
           <span class="day-tamp">23C°</span>
         </li>
         <li>
           <img
-            class="imagem2"
+            class="imagem6"
             src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
             alt="imagem-temp"
           />
-          <span>Sexta</span>
+          <span class="day6">Sex</span>
           <span class="day-tamp">23C°</span>
         </li>
         <li>
           <img
-            class="imagem2"
+            class="imagem7"
             src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
             alt="imagem-temp"
           />
-          <span>Sábado</span>
+          <span class="day7">Sáb</span>
           <span class="day-tamp">23C°</span>
         </li>
       </ul>
     </div>
-    <section src="../js/show.js"></section>
+    <script src="../js/show.js"></script>
   </body>
 </html>
