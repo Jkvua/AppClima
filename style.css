@@ -188,6 +188,7 @@
 
 /* Corpo da Pagina */
 body {
+    height: 100vh;
     margin: 0;
     background-color: var(--fundo);
     display: flex;
