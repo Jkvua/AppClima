@@ -5,15 +5,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
     <title>Sobre o app</title>
     <style>
         body {
             background-color: #e3e9ee; 
             font-family: Georgia, 'Times New Roman', Times, serif;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            margin-left: 40px;
-            margin-right: 40px;
+            margin-top: 0;
+            text-align: center;
+            height: 100vh;
+        }
+
+        @media screen and (max-width: 600px) {
+            main {
+                padding: 1rem;
+            }
+            header {
+                padding-bottom: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
         }
         h1 {
             color: #000000;
@@ -25,22 +37,46 @@
             color: #462246;
             text-decoration: none;
         }
-        .comment {
-            background-color: #C2F3F0;
-        }
     </style>
 </head>
 
 <body>
-    <h1>Sobre o App</h1> 
-    <div class="comment">
-    <p>Esse app foi desenvolvido para demonstrar o clima, permitindo que os usuários pesquisem as condições do tempo em
-    diferentes lugares em tempo real. <br>
-    O app recebeu o nome de ClimaClean, que significa: clima limpo, ou seja, o intuito do site é que os usuários       possam ter acesso a informação sobre o clima de forma limpa, sem problemas e sem demora. Essa é a versão 1.0 do projeto no ano de 2024. <br>
-    O projeto <strong>ClimaClean</strong> foi desenvolvido por: Camila, Gabriela, José Victor, Otávio e Sidiclei.
-    Alunos do curso Sistemas Da Informação do Instituto Federal Catarinense - IFC. <br>
-        Saiba mais sobre no <a target="_blank" href="https://github.com/Jkvua/AppClima">Github do projeto</a>.
-    </p>
-    </div>
+    <header>
+        <h2><a href="index.html" class="logo">☁️ ClimaClean</a></h2>
+        <div></div>
+        <nav class="nav">
+          <a href="../paginas/nav.html" target="_blank">Sobre o app</a>
+          <span> | </span>
+          <a href="https://github.com/Jkvua/AppClima" target="_blank">Github do projeto</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Sobre o App</h1> 
+        <p>
+            Esse app foi desenvolvido para demonstrar o clima, permitindo que os usuários pesquisem as condições do tempo em diferentes lugares em tempo real. 
+        </p>
+        <p>
+            O app recebeu o nome de ClimaClean, que significa: clima limpo, ou seja, o intuito do site é que os usuários possam ter acesso a informação sobre o clima de forma limpa, sem problemas e sem demora.
+        </p>
+        <p>
+            Essa é a versão 1.0 do projeto no ano de 2024.
+        </p>
+        <p>
+            O projeto <strong>ClimaClean</strong> foi desenvolvido por: Camila, Gabriela, José Victor, Otávio e Sidiclei. Alunos do curso Sistemas Da Informação do Instituto Federal Catarinense - IFC.
+        </p>
+        <p>
+            Saiba mais sobre no <a target="_blank" href="https://github.com/Jkvua/AppClima">Github do projeto</a>.
+        </p>
+    </main>
+    
+    <footer>
+        <p>
+          ☁️ ClimaClean 
+        </p>
+        <p>
+          Versão 1.0/2024
+        </p>
+    </footer>
 </body>
 </html>

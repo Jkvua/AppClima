@@ -73,8 +73,12 @@
     -webkit-backdrop-filter: blur(1px);
     backdrop-filter: blur(1px);
     border-radius: 20px;
-    height: inherit;
     transition: all 500ms ease;
+    text-decoration: none;
+}
+
+.link {
+    text-decoration: none;
 }
 
 .home-demo .item .texto:hover, .home-demo .item .texto:focus-within {
@@ -189,22 +193,36 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /* Header */
 header {
     grid-area: header;
     background-color: var(--corPrimaria);
-    display: grid;
-    grid-template-columns: 2fr 5fr 2fr;
-    align-items: center;
-}
-header:nth-child(1) {
-    text-align: center;
 }
 header .logo {
     text-decoration: none;
     color: white;
+}
+header:nth-child(1) {
+    text-align: center;
+}
+
+@media screen and (min-width: 601px) {
+    header {
+        display: grid;
+        grid-template-columns: 2fr 5fr 2fr;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        align-items: center;
+    }
 }
 
 /* Footer */
@@ -221,13 +239,15 @@ main {
     grid-area: main;
 }
 
-
-main div.principal {
-    padding: 0 5rem;
+@media screen and (min-width: 601px) {
+    section, main div.principal {
+        padding: 0 5rem;
+    }
 }
 
 main div.principal .media-box {
-    background-color: var(--corSecundaria);
+    transform: scale(1.1);
+    background: linear-gradient(#317abb, #91aac0);
     padding: 1rem;
     border-radius: 20px;
     display: flex;
@@ -244,17 +264,31 @@ main div.principal .media-box .info {
     padding: 2rem 0;
 }
 
-.clima {
-    padding: 1rem;
-    background-color: var(--corPrimaria);
-    border-radius: 20px;
-}
+
 
 main div.principal .media-box .info.clima {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     padding: 1rem 1rem 1rem 0.4rem;
+    border-left: 1px solid gray;
+    margin: 0.4rem
+}
+
+@media screen and (min-width: 601px) {
+    .clima {
+        padding: 1rem;
+        background-color: var(--corPrimaria);
+        border-radius: 20px;
+    }
+    main div.principal .media-box .info.clima{
+        border-left: none;
+    }
+}
+@media screen and (max-width: 600px) {
+    .item {
+        height: 214.4px !important;
+    }
 }
 
 .container {

@@ -20,6 +20,7 @@ function dadosTela(dados) {
   document.querySelector(".img-previsao").src = "https:" + dados.current.condition.icon
   document.querySelector(".dataHora").innerHTML = dados.location.localtime
   document.querySelector(".pais").innerHTML = dados.location.country
+  document.querySelector("#link-cidade").href = "../paginas/show.html?cidade=" + dados.location.name 
 }
 
 async function buscarCidade(cidade) {
@@ -35,7 +36,13 @@ function clicaNoBotao() {
   buscarCidade(cidade)
 }
 
-
+//Detecção de tecla
+const node = document.getElementById("cityinput");
+node.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        clicaNoBotao( )
+    }
+});
 
 
 //https://codepen.io/byShep/pen/zYxgrbp//

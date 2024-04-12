@@ -51,3 +51,10 @@ document.addEventListener("DOMContentLoaded", function() {
     buscarCity(local.search.split("=")[1]);
     previsaoSemana(local.search.split("=")[1]);
 });
+
+const node = document.getElementById("cityinput");
+node.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        botaoShow()
+    }
+});
