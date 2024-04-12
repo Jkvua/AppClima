@@ -9,7 +9,7 @@ function telaClima(dddos) {
     document.querySelector(".temp").innerHTML = dddos.current.temp_c + "C°";
     document.querySelector(".texto-previsao").innerHTML = dddos.current.condition.text;
     document.querySelector(".vento").innerHTML = dddos.current.wind_kph + "km/h";
-    document.querySelector(".umidade").innerHTML = "Humidade: " + dddos.current.humidity + "%";
+    document.querySelector(".umidade").innerHTML = "Umidade: " + dddos.current.humidity + "%";
     document.querySelector(".img-previsao").src = "https:" + dddos.current.condition.icon;
 }
 
