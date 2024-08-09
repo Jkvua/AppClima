@@ -1,5 +1,5 @@
 # AppClima :sunny: :maple_leaf: :snowflake:	:hibiscus: 
-***
+
 ### Aplicativo de clima para aula de desenvolvimento web
 ***
 #### Sobre o projeto
